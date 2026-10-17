@@ -1,0 +1,17 @@
+# Carpetas de compilación y distribución
+build/
+dist/
+*.spec
+
+# Archivos binarios y ejecutables
+*.exe
+*.dll
+
+# Caché de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
