@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
+[![Zero-Install](https://img.shields.io/badge/environment-zero--install-brightgreen.svg)](#zero-install-standalone-binaries)
 
 **Ostia** is a natural programming language written in Python, inspired by object-oriented and strongly-typed languages like Java, but completely designed with native **Spanish syntax**. It features native UTF-8 support for accented characters and `ñ`, strong typing with type inference, robust exception handling, interactive I/O, control flow constructs, and a built-in standard math library.
 
@@ -9,6 +10,7 @@
 
 ## Table of Contents
 - [Features](#features)
+- [Zero-Install Standalone Binaries](#zero-install-standalone-binaries)
 - [Installation & Setup](#installation--setup)
 - [Usage](#usage)
 - [Language Overview & Syntax](#language-overview--syntax)
@@ -34,15 +36,28 @@
 - **Function Definitions:** Full support for functions with typed parameter lists and return values.
 - **Robust Exception System:** Built-in error hierarchy with `intentar`, `capturar`, `finalmente`, and manual throwing using `lanza`/`lanzar`.
 - **Standard Math Module:** Integrated constants ($ \pi $, $ e $) and trigonometric/logarithmic operations via the `Matematica` module.
+- **Zero-Install Portability:** Native pre-compiled binaries (`ostia.exe`, `ostia-linux`) run out-of-the-box without requiring Python or system installation.
+
+---
+
+## Zero-Install Standalone Binaries
+
+Ostia includes pre-compiled standalone executables in the root directory that eliminate external dependencies (such as Python or Node.js runtime requirements):
+
+- **Windows:** `ostia.exe`
+- **Linux:** `ostia-linux`
+
+These binaries can be executed directly from any terminal or integrated seamlessly into local VS Code workflows across platforms.
 
 ---
 
 ## Installation & Setup
 
 ### Requirements
-- **Python 3.8+** installed on your system.
+- **Standalone Mode:** No external dependencies or Python installation required.
+- **Source Mode (Optional):** Python 3.8+ (only if running directly via `ostia.py`).
 
-### Cloning / Installation
+### Cloning / Setup
 Clone the repository to your local machine:
 ```bash
 git clone https://github.com/your-username/ostia.git
@@ -53,8 +68,21 @@ cd ostia
 
 ## Usage
 
-### Running via Python
-Run any `.ostia` source file directly using the interpreter:
+### Running Standalone Executables (Zero-Install)
+
+#### On Windows (PowerShell / CMD)
+```powershell
+.\ostia.exe path/to/script.ostia
+```
+
+#### On Linux
+```bash
+chmod +x ./ostia-linux
+./ostia-linux path/to/script.ostia
+```
+
+### Running via Python Source
+Run any `.ostia` source file directly using the Python interpreter:
 ```bash
 python ostia.py examples/hello_world.ostia
 ```
@@ -63,16 +91,10 @@ or via module execution:
 python -m ostia examples/hello_world.ostia
 ```
 
-### Shebang Execution (Linux / macOS)
-Add the shebang header at the top of your `.ostia` file:
-```bash
-#!/usr/bin/env python3 /path/to/ostia.py
-```
-Make the file executable and run it directly:
-```bash
-chmod +x script.ostia
-./script.ostia
-```
+### VS Code Integration
+This repository contains a pre-configured `.vscode/tasks.json` that automatically selects the appropriate platform binary (`ostia.exe` or `ostia-linux`) based on your operating system.
+
+- Press **`Ctrl + Shift + B`** (or `Cmd + Shift + B` on macOS) while viewing any `.ostia` file to execute it instantly in the integrated terminal.
 
 ---
 
