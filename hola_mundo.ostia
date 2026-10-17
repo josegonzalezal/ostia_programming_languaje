@@ -1,0 +1,6 @@
+imprimirln("¡Hola, mundo desde Ostia!");
+
+// Esperar a que el usuario presione Enter antes de salir
+imprimirln("");
+imprimirln("Presiona Enter para salir...");
+leerLinea();
